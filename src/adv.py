@@ -39,6 +39,14 @@ room['treasure'].s_to = room['narrow']
 
 # Make a new player object that is currently in the 'outside' room.
 
+while True:
+    inp = input('Please enter a room description')
+    if inp == 'q':
+        break
+    elif inp == 'n' or inp == 'w' or inp == 's' or inp == 'e':
+        print(inp)
+    else:
+        print('enter n for north w for west s for south e for east')
 # Write a loop that:
 #
 # * Prints the current room name
