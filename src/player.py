@@ -8,3 +8,6 @@ class Player:
     def change_location(self,changedLocation):
         self.location = changedLocation
 
+    def print_location(self):
+        print(self.location)
+
