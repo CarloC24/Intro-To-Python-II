@@ -1,4 +1,7 @@
 from room import Room
+from player import Player
+from nice import funcOne
+funcOne()
 
 # Declare all the rooms
 
@@ -39,8 +42,10 @@ room['treasure'].s_to = room['narrow']
 
 # Make a new player object that is currently in the 'outside' room.
 
+my_player = player(room['outside'])
 while True:
     inp = input('Please enter a room description')
+    print(my_player.location)
     if inp == 'q':
         break
     elif inp == 'n' or inp == 'w' or inp == 's' or inp == 'e':
