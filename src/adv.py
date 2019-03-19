@@ -47,7 +47,12 @@ while True:
     if inp == 'q':
         break
     elif inp == 'n' or inp == 'w' or inp == 's' or inp == 'e':
-        print(f'{my_player.location.name} \n{my_player.location.description}')
+        new_room = my_player.location.get_location(inp)
+        if new_room == None:
+            print('Invalid direction')
+        else:
+            print(f'{my_player.location.name} \n{my_player.location.description}')
+            my_player.change_location(new_room)
     else:
         print('enter n for north w for west s for south e for east')
 # Write a loop that:
