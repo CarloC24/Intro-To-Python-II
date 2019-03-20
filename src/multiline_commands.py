@@ -5,10 +5,10 @@ from item_list import item_list
 
 def additem_removeitem(inp,item_list,my_player):
     if inp[1] in item_list:
-            if inp[1] in my_player.location.items:
-                print(inp[1])
+            if my_player.location.check_item(inp[1]):
+                my_player.location.add_or_remove(inp[1])
+                my_player.add_or_remove(inp[1])
             else:
-                print(my_player.location.check_item(inp[1]))
                 print(f'{inp[1]} is not in the room')
     else:
             print(f'the item {inp[1]} does not exist')

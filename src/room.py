@@ -1,5 +1,6 @@
 # Implement a class to hold room information. This should have name and
 # description attributes.
+from item_list import item_list
 
 
 class Room:
@@ -23,15 +24,19 @@ class Room:
             return self.e_to
 
     def print_items(self):
-        print([x.name for x in self.items])
+        if self.items:
+             print([x.name for x in self.items])
+        else:
+            print('There are no items in the room')
 
     def add_or_remove(self,item):
-        if item in self.items:
-            print(f'successfully removed {item.name}')
-            self.items.remove(item)
+        print(f'these are the items {self.items}')
+        if item in [x.name for x in self.items]:
+            print(f'successfully added {item} to your inventory')
+            self.items.remove(item_list[item])
         else:
-             print(f'successfully added {item.name}')
-             self.items.append(item)
+             print(f'successfully added {item}')
+             self.items.append(item_list[item])
 
     def check_item(self,item):
         if item in [x.name for x in self.items]:
