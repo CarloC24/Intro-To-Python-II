@@ -9,21 +9,21 @@ print(item_list)
 
 room = {
     'outside':  Room("Outside Cave Entrance",
-                     "North of you, the cave mount beckons"),
+                     "North of you, the cave mount beckons",item_list['book']),
 
     'foyer':    Room("Foyer", """Dim light filters in from the south. Dusty
-passages run north and east."""),
+passages run north and east.""",item_list['torch']),
 
     'overlook': Room("Grand Overlook", """A steep cliff appears before you, falling
 into the darkness. Ahead to the north, a light flickers in
-the distance, but there is no way across the chasm."""),
+the distance, but there is no way across the chasm.""",item_list['orb']),
 
     'narrow':   Room("Narrow Passage", """The narrow passage bends here from west
-to north. The smell of gold permeates the air."""),
+to north. The smell of gold permeates the air.""",item_list['lantern']),
 
     'treasure': Room("Treasure Chamber", """You've found the long-lost treasure
 chamber! Sadly, it has already been completely emptied by
-earlier adventurers. The only exit is to the south."""),
+earlier adventurers. The only exit is to the south.""",item_list['sword']),
 }
 
 
@@ -60,10 +60,12 @@ while True:
     if print_room:
         print(f'{my_player.location.name} \n {my_player.location.description}')
     inp = input('Please enter a direction :')
-    if inp == 'q':
+    inp = inp.split(' ')
+    print(inp)
+    if inp[0] == 'q':
         break
-    elif inp == 'n' or inp == 'w' or inp == 's' or inp == 'e':
-       print_room =  move_player(my_player,inp)
+    elif inp[0] == 'n' or inp[0] == 'w' or inp[0] == 's' or inp[0] == 'e':
+       print_room =  move_player(my_player,inp[0])
     else:
         print('enter n for north w for west s for south e for east')
 # Write a loop that:
