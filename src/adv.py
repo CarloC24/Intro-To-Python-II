@@ -1,6 +1,7 @@
 from room import Room
 from player import Player
 from item_list import item_list
+from multiline_commands import *
 
 
 
@@ -59,7 +60,6 @@ multiline_command['look'] = look_command
 
 
 # Make a new player object that is currently in the 'outside' room.
-
 my_player = Player(room['outside'])
 while True:
     if print_room:
