@@ -60,7 +60,7 @@ multiline_command['look'] = look_command
 
 
 # Make a new player object that is currently in the 'outside' room.
-my_player = Player(room['outside'])
+my_player = Player(room['outside'],[])
 while True:
     if print_room:
         print(f'{my_player.location.name} \n {my_player.location.description}')
@@ -74,6 +74,7 @@ while True:
        print_room =  move_player(my_player,inp[0])
     elif len(inp) > 1:
         multiline_command[inp[0]](inp,my_player)
+        print_room = False
     else:
         print('enter n for north w for west s for south e for east')
 # Write a loop that:
