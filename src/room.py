@@ -21,3 +21,6 @@ class Room:
             return self.w_to
         if direction == 'e':
             return self.e_to
+
+    def print_items(self):
+        return [self.items.name]

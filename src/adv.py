@@ -4,7 +4,6 @@ from item_list import item_list
 
 
 
-print(item_list)
 # Declare all the rooms
 
 room = {
@@ -53,19 +52,28 @@ def move_player(my_player, inp):
         my_player.change_location(new_room)
         return True
 
+multiline_command = {}
+multiline_command['get'] = get_command
+multiline_command['drop'] = drop_command
+multiline_command['look'] = look_command
+
+
 # Make a new player object that is currently in the 'outside' room.
 
 my_player = Player(room['outside'])
 while True:
     if print_room:
         print(f'{my_player.location.name} \n {my_player.location.description}')
+        the_items = my_player.location.print_items()
+        print(f'{the_items} these are the items')
     inp = input('Please enter a direction :')
     inp = inp.split(' ')
-    print(inp)
     if inp[0] == 'q':
         break
     elif inp[0] == 'n' or inp[0] == 'w' or inp[0] == 's' or inp[0] == 'e':
        print_room =  move_player(my_player,inp[0])
+    elif len(inp) > 1:
+        multiline_command[inp[0]](inp,my_player)
     else:
         print('enter n for north w for west s for south e for east')
 # Write a loop that:
