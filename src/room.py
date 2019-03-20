@@ -30,12 +30,11 @@ class Room:
             print('There are no items in the room')
 
     def add_or_remove(self,item):
-        print(f'these are the items {self.items}')
         if item in [x.name for x in self.items]:
-            print(f'successfully added {item} to your inventory')
+            print(f'successfully removed {item} in the room')
             self.items.remove(item_list[item])
         else:
-             print(f'successfully added {item}')
+             print(f'successfully added {item} in the room')
              self.items.append(item_list[item])
 
     def check_item(self,item):

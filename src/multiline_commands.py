@@ -23,10 +23,7 @@ def get_command(inp,my_player):
 
 def drop_command(inp,my_player):
     if inp[1]:
-        if item_list[inp[1]]:
-            print(item_list[inp[1]])
-        else:
-            print(f'no item found {item_list[inp[1]]}')
+       additem_removeitem(inp,item_list,my_player)
     else:
         print('type in the command help')
 

@@ -47,7 +47,7 @@ print_room = True
 def move_player(my_player, inp):
     new_room = my_player.location.get_location(inp)
     if new_room == None:
-        print('Invalid direction')
+        print(' You cannot move on that direction')
         return False
     else:
         my_player.change_location(new_room)
@@ -63,7 +63,7 @@ multiline_command['look'] = look_command
 my_player = Player(input('Please enter a name:'),room['outside'],[])
 while True:
     if print_room:
-        print(f'hey {my_player.name} you are at{my_player.location.name} \n {my_player.location.description}')
+        print(f'hey {my_player.name} you are at {my_player.location.name} \n {my_player.location.description}')
     inp = input('Please enter a direction :')
     inp = inp.split(' ')
     if inp[0] == 'q':

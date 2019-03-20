@@ -24,10 +24,10 @@ class Player:
 
     def add_or_remove(self,item):
         if item in [x.name for x in self.items]:
-            print(f'successfully removed {item}')
+            print(f'successfully removed {item} in your inventory in player.py')
             self.items.remove(item_list[item])
         else:
-             print(f'successfully added {item}')
+             print(f'successfully added {item} in your inventory in player.py')
              self.items.append(item_list[item])
 
     def check_item(self,item):
