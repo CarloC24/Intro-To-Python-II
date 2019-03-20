@@ -60,12 +60,10 @@ multiline_command['look'] = look_command
 
 
 # Make a new player object that is currently in the 'outside' room.
-my_player = Player(room['outside'],[])
+my_player = Player(input('Please enter a name:'),room['outside'],[])
 while True:
     if print_room:
-        print(f'{my_player.location.name} \n {my_player.location.description}')
-        the_items = my_player.location.print_items()
-        print(f'{the_items} these are the items')
+        print(f'hey {my_player.name} you are at{my_player.location.name} \n {my_player.location.description}')
     inp = input('Please enter a direction :')
     inp = inp.split(' ')
     if inp[0] == 'q':

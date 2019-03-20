@@ -6,7 +6,7 @@ class Room:
     def __init__(self, name, description,items):
         self.name = name
         self.description = description
-        self.items = items
+        self.items = [items]
         self.n_to = None
         self.w_to = None
         self.e_to = None
@@ -23,4 +23,18 @@ class Room:
             return self.e_to
 
     def print_items(self):
-        return [self.items.name]
+        print([x.name for x in self.items])
+
+    def add_or_remove(self,item):
+        if item in self.items:
+            print(f'successfully removed {item.name}')
+            self.items.remove(item)
+        else:
+             print(f'successfully added {item.name}')
+             self.items.append(item)
+
+    def check_item(self,item):
+        if item in [x.name for x in self.items]:
+            return True
+        else:
+            return False

@@ -3,7 +3,8 @@
 
 
 class Player:
-    def __init__(self, startLocation,items):
+    def __init__(self,name, startLocation,items):
+        self.name = name
         self.location = startLocation
         self.items = items
 
@@ -14,4 +15,21 @@ class Player:
         print(f'you are at {self.location.name}')
 
     def print_items(self):
-        print(f'your items are {self.items}')
+        if len(self.items):
+            print(f'your items are {[x for x in self.items]}')
+        else:
+            print(f'you have no items in your inventory {self.name}')
+
+    def add_or_remove(self,item):
+        if item in self.items:
+            print(f'successfully removed {item.name}')
+            self.items.remove(item)
+        else:
+             print(f'successfully added {item.name}')
+             self.items.append(item)
+
+    def remove_item(self,item):
+        self.items.remove(item)
+
+    def add_item(self,item):
+        self.items.append(item)
