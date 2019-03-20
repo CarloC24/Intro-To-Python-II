@@ -1,7 +1,10 @@
 from room import Room
 from player import Player
+from item_list import item_list
 
 
+
+print(item_list)
 # Declare all the rooms
 
 room = {
