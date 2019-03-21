@@ -42,3 +42,9 @@ class Room:
             return True
         else:
             return False
+    def add_item(self,item):
+        self.items.append(item_list[item])
+    def remove_item(self,item):
+        self.items.remove(item_list[item])
+    def print_self(self):
+        print(self)
