@@ -35,7 +35,10 @@ class Player:
         else:
             self.items.append(item_list[item])
     def remove_item(self,item):
-        self.items.remove(item_list[item])
+        if self.check_item(item):
+            self.items.remove(item_list[item])
+        else:
+            print(f'Cant remove item {item} because you dont have it')
     def check_item(self,item):
         if item in [x.name for x in self.items]:
             return True

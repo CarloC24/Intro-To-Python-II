@@ -44,10 +44,11 @@ class Room:
             return False
     def add_item(self,item):
         if self.check_item(item):
-            print('Item is already in your inventory')
+            print(f'\n\n {item} does not exist on the inventory \n\n')
         else:
+            print(f' \n\n successfully added {item} in your inventory \n\n')
             self.items.append(item_list[item])
-    def remove_item(self,item,my_player):
+    def remove_item(self,item):
         if self.check_item(item):
             self.items.remove(item_list[item])
         else:
