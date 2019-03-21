@@ -16,8 +16,8 @@ def addroomitem_removeplayeritem(inp,item_list,my_player):
 def addplayeritem_removeroomitem(inp,item_list,my_player):
     if inp[1] in item_list:
             if my_player.location.check_item(inp[1]):
-                my_player.location.add_or_remove(inp[1])
-                my_player.add_or_remove(inp[1])
+                my_player.location.remove_item(inp[1],my_player)
+                my_player.add_item(inp[1])
             else:
                 print(f'{inp[1]} is not in the room')
     else:
@@ -27,13 +27,13 @@ def addplayeritem_removeroomitem(inp,item_list,my_player):
 
 def get_command(inp,my_player):
     if inp[1]:
-        additem_removeitem(inp,item_list,my_player)
+        addplayeritem_removeroomitem(inp,item_list,my_player)
     else:
         print('type in the command help')
 
 def drop_command(inp,my_player):
     if inp[1]:
-       additem_removeitem(inp,item_list,my_player)
+       addroomitem_removeplayeritem(inp,item_list,my_player)
     else:
         print('type in the command help')
 

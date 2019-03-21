@@ -75,6 +75,7 @@ while True:
         multiline_command[inp[0]](inp,my_player)
         print_room = False
     else:
+        print_room = False
         print('enter n for north w for west s for south e for east')
 # Write a loop that:
 #

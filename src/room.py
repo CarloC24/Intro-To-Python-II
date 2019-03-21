@@ -30,7 +30,7 @@ class Room:
             print('There are no items in the room')
 
     def add_or_remove(self,item):
-        if item in [x.name for x in self.items]:
+        if self.check_item(self.items):
             print(f'successfully removed {item} in the room')
             self.items.remove(item_list[item])
         else:
@@ -43,8 +43,14 @@ class Room:
         else:
             return False
     def add_item(self,item):
-        self.items.append(item_list[item])
-    def remove_item(self,item):
-        self.items.remove(item_list[item])
+        if self.check_item(item):
+            print('Item is already in your inventory')
+        else:
+            self.items.append(item_list[item])
+    def remove_item(self,item,my_player):
+        if self.check_item(item):
+            self.items.remove(item_list[item])
+        else:
+            print(f'room does not have this item {item}')
     def print_self(self):
         print(self)
