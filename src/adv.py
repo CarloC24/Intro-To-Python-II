@@ -65,7 +65,7 @@ my_player = Player(input('Please enter a name:'),room['outside'],[])
 while True:
     if print_room:
         print(f'hey {my_player.name} you are at {my_player.location.name} \n {my_player.location.description}')
-    inp = input('Please enter a direction :')
+    inp = input('What is your command:')
     inp = inp.split(' ')
     if inp[0] == 'q':
         break

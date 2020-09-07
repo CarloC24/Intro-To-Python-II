@@ -29,14 +29,6 @@ class Room:
         else:
             print('There are no items in the room')
 
-    def add_or_remove(self,item):
-        if self.check_item(self.items):
-            print(f'successfully removed {item} in the room')
-            self.items.remove(item_list[item])
-        else:
-             print(f'successfully added {item} in the room')
-             self.items.append(item_list[item])
-
     def check_item(self,item):
         if item in [x.name for x in self.items]:
             return True
