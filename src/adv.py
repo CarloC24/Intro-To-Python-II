@@ -6,6 +6,7 @@ from multiline_commands import *
 
 
 # Declare all the rooms
+# Reviewing everything again.
 
 room = {
     'outside':  Room("Outside Cave Entrance",
